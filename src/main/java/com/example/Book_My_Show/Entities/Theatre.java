@@ -22,6 +22,9 @@ public class Theatre {
 
     private String location;
 
-    @OneToMany(mappedBy = "theate",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "theatre",cascade = CascadeType.ALL)
     List<TheatreSeat> theatreSeatList=new ArrayList<>();
+
+    @OneToMany(mappedBy = "theatre",cascade = CascadeType.ALL)
+    List<Show> showList=new ArrayList<>();
 }

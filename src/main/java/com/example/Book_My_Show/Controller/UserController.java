@@ -19,5 +19,7 @@ public class UserController {
     public String addUser(@RequestBody UserEntryDto userEntryDto)
     {
 
+        userService.addUser(userEntryDto);
+        return "";
     }
 }
