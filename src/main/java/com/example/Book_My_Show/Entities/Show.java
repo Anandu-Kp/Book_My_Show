@@ -10,7 +10,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "show")
@@ -39,4 +41,13 @@ public class Show {
     @JoinColumn
     Theatre theatre;
 
+    @ManyToOne
+    @JoinColumn
+    Movie movie;
+
+    @OneToMany(mappedBy = "show",cascade = CascadeType.ALL)
+    List<ShowSeat> showSeatList=new ArrayList<>();
+
+   @OneToMany(mappedBy = "show",cascade = CascadeType.ALL)
+    List<Ticket> ticketList=new ArrayList<>();
 }

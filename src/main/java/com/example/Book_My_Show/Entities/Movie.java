@@ -6,6 +6,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "movie")
 @NoArgsConstructor
@@ -30,5 +33,7 @@ public class Movie {
     private int duration;
 
 
+    @OneToMany(mappedBy = "movie",cascade = CascadeType.ALL)
+    List<Show> showList=new ArrayList<>();
 
 }

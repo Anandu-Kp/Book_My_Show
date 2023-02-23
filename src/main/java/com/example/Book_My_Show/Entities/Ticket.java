@@ -35,4 +35,8 @@ public class Ticket {
     @ManyToOne
     @JoinColumn
     User user;
+
+    @ManyToOne
+    @JoinColumn
+    Show show;
 }
